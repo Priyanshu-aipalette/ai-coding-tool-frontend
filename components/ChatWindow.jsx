@@ -297,11 +297,50 @@ const ChatWindow = ({ height = '100%', showWelcome = true }) => {
             ))}
             
             {isStreamingThisMessage && (
-              <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
-                <TypingIcon sx={{ fontSize: 16, mr: 1 }} />
+              <Box sx={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                mt: 1,
+                animation: 'pulse 1.5s ease-in-out infinite'
+              }}>
+                <TypingIcon sx={{ 
+                  fontSize: 16, 
+                  mr: 1,
+                  animation: 'bounce 0.6s ease-in-out infinite alternate'
+                }} />
                 <Typography variant="caption" color="text.secondary">
                   AI is typing...
                 </Typography>
+                <Box sx={{ 
+                  ml: 1, 
+                  display: 'flex', 
+                  gap: 0.5 
+                }}>
+                  <Box sx={{ 
+                    width: 4, 
+                    height: 4, 
+                    borderRadius: '50%', 
+                    bgcolor: 'primary.main',
+                    animation: 'bounce 0.8s ease-in-out infinite alternate',
+                    animationDelay: '0s'
+                  }} />
+                  <Box sx={{ 
+                    width: 4, 
+                    height: 4, 
+                    borderRadius: '50%', 
+                    bgcolor: 'primary.main',
+                    animation: 'bounce 0.8s ease-in-out infinite alternate',
+                    animationDelay: '0.2s'
+                  }} />
+                  <Box sx={{ 
+                    width: 4, 
+                    height: 4, 
+                    borderRadius: '50%', 
+                    bgcolor: 'primary.main',
+                    animation: 'bounce 0.8s ease-in-out infinite alternate',
+                    animationDelay: '0.4s'
+                  }} />
+                </Box>
               </Box>
             )}
 

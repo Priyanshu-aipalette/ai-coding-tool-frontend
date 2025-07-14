@@ -157,6 +157,9 @@ export const sendPrompt = async (prompt, messageHistory = [], context) => {
               const data = JSON.parse(line.slice(6));
 
               if (data.chunk) {
+                // Add a small delay to make chunks feel more natural
+                await new Promise(resolve => setTimeout(resolve, 30));
+                
                 // Stream individual tokens
                 appendCurrentResponse(data.chunk);
                 fullResponse += data.chunk;
